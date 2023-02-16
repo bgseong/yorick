@@ -1,0 +1,18 @@
+.app-header{
+    position: absolute;
+    height: 10%;
+    width: 100%;
+}
+
+.name-bar{
+    background-color: azure;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    height: 80%;
+    width: 10%;
+    Font-size: 250%;
+    text-align : center;
+    line-height : 100%;
+}
