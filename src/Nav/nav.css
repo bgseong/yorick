@@ -1,0 +1,35 @@
+.nav{
+    top:70%;
+    background-color: rgb(1, 36, 49);
+    height: 100%;
+    width: 200px;
+}
+ul{
+    -webkit-padding-start: 0px;
+    -webkit-margin-before: 0px;
+    -webkit-margin-after: 0px;
+    height: auto;
+}
+
+ul li{
+    padding: 0 0 0 0;
+    list-style: none;           
+    color: white;            
+    background-color: #000365;
+    line-height: 50px;        
+    text-align: center; 
+}
+
+.menu-button {                               
+    text-decoration:none;                   
+    color: white;                             
+    display: block;                                                
+    font-size: 12px;                   
+    font-weight: bold;                       
+    font-family: "Trebuchet MS";
+}
+
+.menu-button:hover {
+    background-color: #151991;
+    border-right: solid 3px #7e81c9;
+}

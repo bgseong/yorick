@@ -1,0 +1,11 @@
+div .main-body{
+    background: url('./img/1.png') no-repeat center center/cover, rgba(0, 0, 0, 0.5);
+    background-blend-mode: multiply;
+    position: static;
+    left:200px;
+    background-image: url(./img/1.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100vw;
+    height: 100vh;
+}

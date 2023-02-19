@@ -1,10 +1,8 @@
 import React, { Component } from 'react';
-import Header from './Header/header';
-import Body from './Body/body';
-import Footer from './Footer/footer';
+import Nav from './Nav/nav';
+import Main from './Main/main'
+import './App.css';
 
-
-import backgroundImg from './img/1.png';
 
           
 class App extends Component {
@@ -12,24 +10,14 @@ class App extends Component {
     return (
       <div className="App" 
         style={{
-
-          backgroundImage: `url('${backgroundImg}'), linear-gradient(to right, rgba(0,0,0,0), rgba(0,0,0,1))`,
-          backgroundBlendMode: 'overlay',
-          backgroundRepeat: `no-repeat`,
-          backgroundPosition:`top center`,
-          backgroundSize: `cover`,
-          backgroundAttachment: `fixed`,
-
+          display: 'flex',
           width: `100vw`,
           height: `100vh`,
-          opacity: `0.7`,
-
-
         }}>
-
-        <Header/>
-        <Body/>
-        <Footer/>
+          <Nav></Nav>
+          <div className='main-body'>
+            <Main></Main>
+          </div>
       </div>
     );
   }
