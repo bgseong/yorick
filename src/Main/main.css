@@ -11,8 +11,8 @@ font-face {
 
 .container{
     display: grid;
-    grid-template-columns:auto auto auto;
-    grid-template-rows: 60% 40%;
+    grid-template-columns:1fr 1fr 1fr;
+    grid-template-rows: 30% 70%;
 
 
     width: 70%;
@@ -71,7 +71,28 @@ font-face {
 }
 
 .menu {
-    width: 100%;
-    height: 100%;
-    background-color: rgb(144, 144, 144);
+    font-size: 5vw;
+    margin: auto;
+    width: 90%;
+    height: 50%;
+    /* background-color: rgb(189, 189, 189); */
+    border-radius: 3%;
+    display: grid;
+    grid-template-rows: 50% 50%;
+    opacity: 1;
+}
+
+.menu img{
+    max-width: 30%;
+    height: auto;
+    margin: auto auto 0 auto;
+    filter: invert(100%) sepia(83%) saturate(222%) hue-rotate(307deg) brightness(122%) contrast(100%);
+
+
+}
+
+.menu div{
+    margin: 0 auto 0 auto;
+    font-size: 0.7em;
+    color: white;
 }

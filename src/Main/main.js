@@ -1,5 +1,10 @@
 import React from 'react';
 import './main.css';
+
+import bookImg from '../img/book.png';
+import userImg from '../img/user.png';
+import rankingImg from '../img/ranking.png';
+
 class Main extends React.Component{
   render(){
     return (
@@ -10,13 +15,22 @@ class Main extends React.Component{
               <p>YR INFO</p>
             </div>
             <div className='sub'>
-              <p>요릭을 사랑하는 당신을 위한 정보들</p>
+              <p>뷇</p>
             </div>
           </div>
         </div>
-        <div className='menu'>빌드</div>
-        <div className='menu'>랭킹</div>
-        <div className='menu'>나의 요릭</div>
+        <div className='menu'>
+          <img src={bookImg} alt = "빌드아이콘"></img>
+          <div>빌드</div>
+          </div>
+        <div className='menu'>
+          <img src={rankingImg} alt = "랭킹아이콘"></img>
+          <div>랭킹</div>
+        </div>
+        <div className='menu'>
+          <img src={userImg} alt = "유저아이콘"></img>
+          <div>MY</div>
+        </div>
       </div>
     )
   }
