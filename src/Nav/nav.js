@@ -5,11 +5,11 @@ class Nav extends React.Component{
     return (
       <div className="nav">
         <ul>
-          <li className='main-button' href="#">YR INFO</li>
-          <li className='menu-button' href="#">홈</li>
-          <li className='menu-button' href="#">빌드</li>
-          <li className='menu-button' href="#">랭킹</li>
-          <li className='menu-button' href="#">나의 요릭</li>
+          <li className='main-button'><a href="/">YR INFO</a></li>
+          <li className='menu-button'><a href="/">홈</a></li>
+          <li className='menu-button'><a href="/build">빌드</a></li>
+          <li className='menu-button'><a href="/">랭킹</a></li>
+          <li className='menu-button'><a href="/">나의 요릭</a></li>
         </ul>
       </div>
     )

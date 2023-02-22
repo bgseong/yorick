@@ -20,6 +20,8 @@ ul li{
     text-align: center; 
 }
 
+
+
 .menu-button {                               
     text-decoration:none;                   
     color: white;                             
@@ -28,6 +30,13 @@ ul li{
     font-weight: bold;                       
     font-family: "Trebuchet MS";
 }
+
+.menu-button a { 
+    display:block;
+    text-decoration:none;
+    color: inherit;
+}
+
 
 .menu-button:hover {
     background-color: #151991;
