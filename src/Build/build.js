@@ -1,6 +1,6 @@
-import React from 'react';
+import {React, useEffect, useState} from 'react';
 import './build.css';
-
+import axios from 'axios';
 import Build_all from './build-all';
 
 
@@ -12,36 +12,36 @@ import Mundo from '../img/mundo.png';
 
 
 
-class Build extends React.Component{
-  
-  constructor(props) {
-    super(props);
-    this.hidden = {
-      value: "",
-    };
-  }
+const Build= (props) => {
+  const [data, setData] = useState([]);
+  	
+  	useEffect(() => {
+		const fetchData = async() => {
+          const res = await axios.get('http://localhost:8000/Builds');
+          return res.data;
+        }	
+        
+        fetchData().then(res => setData(res));
+    }, []);
 
-  render(
-  ){
-
-    return (
-      <div className="container-build">
-        <div className="champs-con">
-          <img className="champ-icon" src={Jax} alt="Jax"></img>
-          <img className="champ-icon" src={Darius} alt="Darius"></img>
-          <img className="champ-icon" src={Mundo} alt="Mundo"></img>
-          <img className="champ-icon" src={Aatrox} alt="Aatox"></img>
-          <img className="champ-icon" src={Gangplank} alt="Gangplank"></img>
-          
-        </div>
-        <div className="build-con">
-          <div className="build-list" >
-            <Build_all />
-          </div>
+  return (
+    <div className="container-build">
+      <div className="champs-con">
+        <img className="champ-icon" src={Jax} alt="Jax"></img>
+        <img className="champ-icon" src={Darius} alt="Darius"></img>
+        <img className="champ-icon" src={Mundo} alt="Mundo"></img>
+        <img className="champ-icon" src={Aatrox} alt="Aatox"></img>
+        <img className="champ-icon" src={Gangplank} alt="Gangplank"></img>
+        
+      </div>
+      <div className="build-con">
+        <div className="build-list" >
+          <Build_all />
         </div>
       </div>
-    )
-  }
-}
+    </div>
+  )
+  
+};
     
 export default Build;
