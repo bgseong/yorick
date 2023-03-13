@@ -21,7 +21,7 @@ const Build= (props) => {
       let arr=[];
       for (let i = 0; i<data.length; i++){
         arr.push(
-          <img className="champ-icon" src={"https://ddragon.leagueoflegends.com/cdn/13.5.1/img/champion/"+data[i].enemy+".png"} alt="icon"></img>
+          <img className="champ-icon" src={"http://ddragon.leagueoflegends.com/cdn/13.5.1/img/champion/"+data[i].enemy+".png"} alt="icon"></img>
         );
       }
       return arr;
