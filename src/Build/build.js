@@ -4,35 +4,33 @@ import axios from 'axios';
 import Build_all from './build-all';
 
 
-import Jax from '../img/jax.png';
-import Darius from '../img/darius.png';
-import Aatrox from '../img/aatrox.png';
-import Gangplank from '../img/gangplank.png';
-import Mundo from '../img/mundo.png';
-
-
 
 const Build= (props) => {
   const [data, setData] = useState([]);
   	
   	useEffect(() => {
 		const fetchData = async() => {
-          const res = await axios.get('http://localhost:8000/Builds');
+          const res = await axios.get('https://port-0-yorick-backend-3kzv72nlemj02qx.sel3.cloudtype.app/Builds');
           return res.data;
         }	
         
         fetchData().then(res => setData(res));
     }, []);
+    
+    const insertChampIcon = () =>{
+      let arr=[];
+      for (let i = 0; i<data.length; i++){
+        arr.push(
+          <img className="champ-icon" src={"http://ddragon.leagueoflegends.com/cdn/13.5.1/img/champion/"+data[i].enemy+".png"} alt="icon"></img>
+        );
+      }
+      return arr;
+    } 
 
   return (
     <div className="container-build">
       <div className="champs-con">
-        <img className="champ-icon" src={Jax} alt="Jax"></img>
-        <img className="champ-icon" src={Darius} alt="Darius"></img>
-        <img className="champ-icon" src={Mundo} alt="Mundo"></img>
-        <img className="champ-icon" src={Aatrox} alt="Aatox"></img>
-        <img className="champ-icon" src={Gangplank} alt="Gangplank"></img>
-        
+        {insertChampIcon()}
       </div>
       <div className="build-con">
         <div className="build-list" >
