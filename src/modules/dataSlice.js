@@ -5,7 +5,7 @@ import axios from 'axios';
 export const loadData = createAsyncThunk(
   "load/data",
   async () => {
-    const res = await axios.get("http://localhost:8000/Builds");
+    const res = await axios.get("https://port-0-yorick-backend-3kzv72nlemj02qx.sel3.cloudtype.app/Builds");
     return res.data;
     }
 );
