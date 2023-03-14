@@ -20,7 +20,7 @@ const Build= (props) => {
     const insertChampIcon = () =>{
       let arr=[];
       for (let i = 0; i<data.length; i++){
-        if (<img className="champ-icon" src={"//ddragon.leagueoflegends.com/cdn/13.5.1/img/champion/"+data[i].enemy+".png"} alt="icon"></img> in arr) {
+        if (!(<img className="champ-icon" src={"//ddragon.leagueoflegends.com/cdn/13.5.1/img/champion/"+data[i].enemy+".png"} alt="icon"></img> in arr)) {
           arr.push(
             <img className="champ-icon" src={"//ddragon.leagueoflegends.com/cdn/13.5.1/img/champion/"+data[i].enemy+".png"} alt="icon"></img>
           );
