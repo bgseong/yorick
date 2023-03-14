@@ -2,8 +2,8 @@ import { combineReducers } from "redux";
 import buildData from "./dataSlice";
 
 
-const reducer = combineReducers({
-  users: buildData.reducer,
+const rootReducer = combineReducers({
+  buildData: buildData.reducer,
 });
 
-export default reducer;
+export default rootReducer;

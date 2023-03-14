@@ -3,7 +3,7 @@ import axios from 'axios';
 
 
 export const loadData = createAsyncThunk(
-  "load/data",
+  "buildData/loadData",
   async () => {
     const res = await axios.get("https://port-0-yorick-backend-3kzv72nlemj02qx.sel3.cloudtype.app/Builds");
     return res.data;
@@ -17,7 +17,7 @@ const initialState = {
 };
 
 const buildData = createSlice({
-  name: "dataReducer",
+  name: "buildData",
   initialState,
   reducers: {},
   extraReducers: (builder) => {
@@ -33,7 +33,8 @@ const buildData = createSlice({
         state.loading = false;
         state.error = action.error;
       });
-  },
+  }
+  
 });
 
 export default buildData;

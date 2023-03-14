@@ -10,10 +10,10 @@ import {useDispatch, useSelector} from "react-redux";
 const Build= () => {
 
   const dispatch = useDispatch();
-  const build_data = useSelector(state => state.loadData);
-  useEffect(() => {
-    dispatch(loadData());
-  }, [])
+  const build_data = useSelector(state => state.data);
+
+  dispatch(loadData);
+
   console.log(build_data)
   const insertChampIcon = () =>{
     let arr=[];
