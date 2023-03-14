@@ -3,15 +3,11 @@ import axios from 'axios';
 
 
 export const loadData = createAsyncThunk(
-  "data/loadData",
-  async (thunkAPI) => {
-    try {
-      const res = await axios.get("https://port-0-yorick-backend-3kzv72nlemj02qx.sel3.cloudtype.app/Builds");
-      return res.data;
-    } catch (error) {
-      return thunkAPI.rejectWithValue(error);
+  "load/data",
+  async () => {
+    const res = await axios.get("http://localhost:8000/Builds");
+    return res.data;
     }
-  }
 );
 
 const initialState = {

@@ -1,19 +1,20 @@
 import {React, useEffect, useState} from 'react';
 import './build.css';
-import axios from 'axios';
 import Build_all from './build-all';
 
-import {loadData} from "../modules/dataSlice";
+import loadData from "../modules/dataSlice";
 import {useDispatch, useSelector} from "react-redux";
 
 
 
 const Build= () => {
-  const build_data = useSelector(state => state.dataReducer);
+
   const dispatch = useDispatch();
+  const build_data = useSelector(state => state.loadData);
   useEffect(() => {
     dispatch(loadData());
   }, [])
+  console.log(build_data)
   const insertChampIcon = () =>{
     let arr=[];
     for (let i = 0; i<build_data.data.length; i++){
