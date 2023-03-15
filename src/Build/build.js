@@ -21,9 +21,9 @@ const Build= () => {
     try {
       let arr=[];
       for (let i = 0; i<build_data.data.length; i++){
-        if (!(<img className="champ-icon" src={"//ddragon.leagueoflegends.com/cdn/13.5.1/img/champion/"+build_data[i].enemy+".png"} alt="icon"></img> in arr)) {
+        if (!(<img className="champ-icon" src={"//ddragon.leagueoflegends.com/cdn/13.5.1/img/champion/"+build_data[i].data.enemy+".png"} alt="icon"></img> in arr)) {
           arr.push(
-            <img className="champ-icon" src={"//ddragon.leagueoflegends.com/cdn/13.5.1/img/champion/"+build_data[i].enemy+".png"} alt="icon"></img>
+            <img className="champ-icon" src={"//ddragon.leagueoflegends.com/cdn/13.5.1/img/champion/"+build_data[i].data.enemy+".png"} alt="icon"></img>
           );
         }
       }
