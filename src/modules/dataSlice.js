@@ -5,9 +5,9 @@ import axios from 'axios';
 export const loadData = createAsyncThunk(
   "buildData/loadData",
   async () => {
-    const res = await axios.get("https://port-0-yorick-backend-3kzv72nlemj02qx.sel3.cloudtype.app/Builds");
+    const res = await axios.get("http://127.0.0.1:8000/Builds");
     return res.data;
-    }
+  }
 );
 
 const initialState = {
@@ -21,15 +21,14 @@ const buildData = createSlice({
   initialState,
   reducers: {},
   extraReducers: (builder) => {
-    builder
-      .addCase(loadData.pending, (state, action) => {
+    builder.addCase(loadData.pending, (state, action) => {
         state.loading = true;
       })
-      .addCase(loadData.fulfilled, (state, action) => {
+      builder.addCase(loadData.fulfilled, (state, action) => {
         state.loading = false;
         state.data = action.payload;
       })
-      .addCase(loadData.rejected, (state, action) => {
+      builder.addCase(loadData.rejected, (state, action) => {
         state.loading = false;
         state.error = action.error;
       });

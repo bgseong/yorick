@@ -7,13 +7,17 @@ import Uit from '../img/uit.png';
 import Hydra from '../img/hydra.png';
 import Moon from '../img/moon.png';
 import Selida from '../img/selida.png';
-
+import {useSelector} from "react-redux";
 
 import Detail from './detail';
 
-const Build_all= (props) => {
-    let [hid, changeHid] = useState(true);
 
+
+const Build_all= (props) => {
+    const build_data = useSelector(state => state.buildData);
+
+    let [hid, changeHid] = useState(true);
+    
     const changeHidden= () => {
         if (hid === true) { changeHid(false) }
         else { changeHid(true); }
