@@ -24,7 +24,7 @@ const Build= () => {
       for (let i = 0; i<build_data.data.length; i++){
         if (!(<img className="champ-icon" src={"http://ddragon.leagueoflegends.com/cdn/13.5.1/img/champion/"+build_data.data[i].enemy+".png"} alt="icon" /> in arr )) {
           arr.push(
-            <a href={"https://localhost:3000/build/"+build_data.data[i].enemy}>
+            <a href={"https://web-yorick-3kzv72nlemj02qx.sel3.cloudtype.app/build/"+build_data.data[i].enemy}>
               <img className="champ-icon" src={"http://ddragon.leagueoflegends.com/cdn/13.5.1/img/champion/"+build_data.data[i].enemy+".png"} alt="icon" />
             </a>
           );
