@@ -24,7 +24,7 @@ class App extends Component {
             <div className='main-body'>
               <Routes>
                 <Route path='/' element={<Main />}></Route>
-                <Route path='/build' element={<Build />}></Route>
+                <Route path='/build/*' element={<Build />}></Route>
               </Routes>
             </div>
           </BrowserRouter>

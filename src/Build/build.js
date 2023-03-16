@@ -8,7 +8,7 @@ import {useDispatch, useSelector} from "react-redux";
 
 
 
-const Build= ({ match }) => {
+const Build= () => {
 
   const dispatch = useDispatch();
   const build_data = useSelector(state => state.buildData);
@@ -41,7 +41,7 @@ const Build= ({ match }) => {
     let arr=[];
       for (let i = 0; i<build_data.data.length; i++) {
         arr.push(
-        <Route path={`${match.path}/${build_data.data[i].enemy}}`} component={Build_all} />
+        <Route path={`/${build_data.data[i].enemy}}`} component={Build_all} />
         )
       }
       return arr;
