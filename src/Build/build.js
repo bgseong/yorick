@@ -1,5 +1,5 @@
 import {React, useEffect} from 'react';
-import { Route } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 import './build.css';
 import Build_all from './build-all';
 
@@ -41,7 +41,7 @@ const Build= () => {
     let arr=[];
       for (let i = 0; i<build_data.data.length; i++) {
         arr.push(
-        <Route path={`/${build_data.data[i].enemy}}`} component={Build_all} />
+        <Route path={'/'+build_data.data[i].enemy} element={<Build_all />}></Route>
         )
       }
       return arr;
@@ -54,7 +54,9 @@ const Build= () => {
       </div>
       <div className="build-con">
         <div className="build-list" >
-          {insertBuild()}
+          <Routes>
+            {insertBuild()}
+          </Routes>
         </div>
       </div>
     </div>
