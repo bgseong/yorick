@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import {useParams} from 'react-router-dom';
 import './build-all.css';
 
 import Comet from '../img/comet.png';
@@ -14,6 +15,11 @@ import Detail from './detail';
 
 
 const Build_all= (props) => {
+
+    let {id} = useParams();
+
+    console.log(id)
+
     const build_data = useSelector(state => state.buildData);
 
     let [hid, changeHid] = useState(true);

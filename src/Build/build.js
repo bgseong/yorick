@@ -41,7 +41,7 @@ const Build= () => {
     let arr=[];
       for (let i = 0; i<build_data.data.length; i++) {
         arr.push(
-        <Route path={'/'+build_data.data[i].enemy} element={<Build_all />}></Route>
+        <Route path={'/:id'} element={<Build_all />}></Route>
         )
       }
       return arr;
