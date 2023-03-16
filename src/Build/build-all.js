@@ -16,11 +16,15 @@ import Detail from './detail';
 
 const Build_all= (props) => {
 
+    let request = new XMLHttpRequest();
+    request.open('GET', requestURL);
+
     let {id} = useParams();
-
-    console.log(id)
-
     const build_data = useSelector(state => state.buildData);
+
+    let res = build_data.data.filter(it => it.enemy.includes(id));
+    console.log(res);
+
 
     let [hid, changeHid] = useState(true);
     
