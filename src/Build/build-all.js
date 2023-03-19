@@ -16,14 +16,44 @@ import Detail from './detail';
 
 const Build_all= (props) => {
 
-    let request = new XMLHttpRequest();
-    request.open('GET', requestURL);
+    async function request() {
+        const response = await fetch('https://ddragon.leagueoflegends.com/cdn/13.5.1/data/en_US/runesReforged.json',
+        {
+          method: 'GET',
+        });
+        const data = await response.json();
+        console.log(data)
+      }
+    request();
+
 
     let {id} = useParams();
     const build_data = useSelector(state => state.buildData);
-
     let res = build_data.data.filter(it => it.enemy.includes(id));
     console.log(res);
+
+    const insertItems = () => {
+        let arr=[];
+        for (let i = 0; i<res.length;i++) {
+            arr.push(
+                <div>
+                    <div className="build-simple" onClick={()=>{changeHidden()}}>
+                        <div className="runes">
+                        <img src={Comet} alt="유성"></img>
+                        <img src={Uit} alt="영감"></img>
+                        </div>
+                    <div className="items">
+                        <img src={Hydra} alt=""></img>
+                        <img src={Moon} alt=""></img>
+                        <img src={Selida} alt=""></img>
+                    </div>
+                </div>
+                    <Detail hidden={hid}/>     
+                </div>
+            );
+            }
+        }
+    };
 
 
     let [hid, changeHid] = useState(true);
@@ -33,20 +63,20 @@ const Build_all= (props) => {
         else { changeHid(true); }
     };
     return(
-        <>
-        <div className="build-simple" onClick={()=>{changeHidden()}}>
-            <div className="runes">
-            <img src={Comet} alt="유성"></img>
-            <img src={Uit} alt="영감"></img>
+        <div>
+            <div className="build-simple" onClick={()=>{changeHidden()}}>
+                <div className="runes">
+                <img src={Comet} alt="유성"></img>
+                <img src={Uit} alt="영감"></img>
+                </div>
+            <div className="items">
+                <img src={Hydra} alt=""></img>
+                <img src={Moon} alt=""></img>
+                <img src={Selida} alt=""></img>
             </div>
-        <div className="items">
-            <img src={Hydra} alt=""></img>
-            <img src={Moon} alt=""></img>
-            <img src={Selida} alt=""></img>
-        </div>
-        </div>
-        <Detail hidden={hid}/>     
-      </>
+            </div>
+            <Detail hidden={hid}/>     
+      </div>
     );
 
 };
