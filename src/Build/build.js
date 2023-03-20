@@ -1,5 +1,5 @@
 import {React, useEffect} from 'react';
-import { Route, Routes } from 'react-router-dom';
+import {useParams} from 'react-router-dom';
 import './build.css';
 import Build_all from './build-all';
 
@@ -36,16 +36,21 @@ const Build= () => {
       console.log("로딩중")
     }
   } 
+  let {id} = useParams();
+  console.log(id)
+  let res = build_data.data.filter(it => it.enemy.includes(id));
 
-  const insertBuild = () =>{
+  const insertBuild=() =>{
     let arr=[];
-      for (let i = 0; i<build_data.data.length; i++) {
-        arr.push(
-        <Route path={'/:id'} element={<Build_all />}></Route>
-        )
-      }
-      return arr;
+    for (let i=0;i<res.length;i++) {
+      arr.push(
+        <div>
+          <Build_all data={res[i]}/>
+        </div>
+      );
     }
+    return arr;
+  };
 
   return (
     <div className="container-build">
@@ -54,9 +59,7 @@ const Build= () => {
       </div>
       <div className="build-con">
         <div className="build-list" >
-          <Routes>
-            {insertBuild()}
-          </Routes>
+          {insertBuild()}
         </div>
       </div>
     </div>
