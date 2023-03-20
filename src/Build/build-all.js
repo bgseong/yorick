@@ -12,7 +12,7 @@ import Detail from './detail';
 const Build_all= (props) => {
 
     
-    console.log(props.data)
+    console.log("hey",props.data)
 
     let [hid, changeHid] = useState(true);
     
