@@ -1,18 +1,24 @@
-import React, { useState } from 'react';
+import {React, useEffect, useState} from 'react';
 import './build-all.css';
 
 import Comet from '../img/comet.png';
 import Uit from '../img/uit.png';
-
+import {loadRune} from "../modules/runeSlice";
 
 import Detail from './detail';
-
+import {useDispatch, useSelector} from "react-redux";
 
 
 const Build_all= (props) => {
+    const dispatch = useDispatch();
+    const rune_data = useSelector(state => state.runeData);
 
-    
-    console.log("hey",props.data)
+    useEffect(() => {
+        dispatch(loadRune());
+    }, [])
+
+
+
 
     let [hid, changeHid] = useState(true);
     
@@ -24,7 +30,10 @@ const Build_all= (props) => {
         <div>
             <div className="build-simple" onClick={()=>{changeHidden()}}>
                 <div className="runes">
-                <img src={Comet} alt="유성"></img>
+                <img src={"https://ddragon.canisback.com/img/"+
+                    rune_data.data.filter(function(e){
+                        return e.code === props.data.perk0;
+                    }).icon} alt="유성"></img>
                 <img src={Uit} alt="영감"></img>
                 </div>
                 <div className="items">

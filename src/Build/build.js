@@ -17,7 +17,9 @@ const Build= () => {
     dispatch(loadData());
   }, [])
 
-  console.log(build_data)
+
+
+
   const insertChampIcon = () =>{
     try {
       let arr=[];
