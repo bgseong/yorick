@@ -23,19 +23,21 @@ const Build= () => {
   const insertChampIcon = () =>{
     try {
       let arr=[];
+      let setarr=[];
       for (let i = 0; i<build_data.data.length; i++){
-          arr.push(
+        if (!(arr.includes(build_data.data[i].enemy))){
+          arr.push(build_data.data[i].enemy);
+          setarr.push(
             <a href={"/build/"+build_data.data[i].enemy}>
               <img className="champ-icon" src={"http://ddragon.leagueoflegends.com/cdn/13.5.1/img/champion/"+build_data.data[i].enemy+".png"} alt="icon" />
             </a>
           )
         }
-        const setarr = new Set(arr);
-        arr = setarr
-        return arr;
+        }
+        return setarr;
       }
     catch (err) {
-      console.log("로딩중")
+      console.log(err)
     }
   } 
   let {id} = useParams();
