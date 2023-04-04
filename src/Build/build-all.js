@@ -1,7 +1,6 @@
 import {React, useEffect, useState} from 'react';
 import './build-all.css';
 
-import Comet from '../img/comet.png';
 import Uit from '../img/uit.png';
 import {loadRune} from "../modules/runeSlice";
 
@@ -16,25 +15,28 @@ const Build_all= (props) => {
     useEffect(() => {
         dispatch(loadRune());
     }, [])
-
-
-
+    let rune1
+    try {
+        rune1=rune_data.data.find(v => v.id === props.data.perk0).icon
+    } catch (e) {
+        rune1 = "no"
+    }
+    
 
     let [hid, changeHid] = useState(true);
     
     const changeHidden= () => {
         if (hid === true) { changeHid(false) }
         else { changeHid(true); }
+
+    
     };
     return(
         <div>
             <div className="build-simple" onClick={()=>{changeHidden()}}>
                 <div className="runes">
-                <img src={"https://ddragon.canisback.com/img/"+
-                    rune_data.data.filter(function(e){
-                        return e.code === props.data.perk0;
-                    }).icon} alt="유성"></img>
-                <img src={Uit} alt="영감"></img>
+                <img className="main-rune"src={"https://ddragon.canisback.com/img/"+rune1} alt="메인 룬"></img>
+                <img src={Uit} alt="보조룬"></img>
                 </div>
                 <div className="items">
                     <img src={"https://ddragon.leagueoflegends.com/cdn/13.5.1/img/item/"+props.data.item0+".png"} alt=""></img>
